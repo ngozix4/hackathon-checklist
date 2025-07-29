@@ -4,7 +4,49 @@ import Checkbox from "expo-checkbox";
 import { db } from "./firebase"; // path to your firebase.js
 import { doc, setDoc, onSnapshot } from "firebase/firestore";
 
-const initialChecklist = [ /* your checklist as before */ ];
+const initialChecklist = [  {
+    section: '📦 Project Repository',
+    items: [
+      'Public GitHub or GitLab repository with public view access',
+      'Root-level README.md explaining stack choice and setup steps'
+    ]
+  },
+  {
+    section: '🔐 Authentication & Authorization',
+    items: [
+      'Implement user login (JWT / OAuth / sessions)',
+      'Protect all feature routes behind authentication'
+    ]
+  },
+  {
+    section: '🛢️ Database Connection',
+    items: [
+      'Connect a relational or NoSQL database',
+      'Create a health-check endpoint or test to verify DB connectivity'
+    ]
+  },
+  {
+    section: '👤 User Profile & Preferences',
+    items: [
+      'View & edit name, email, and password',
+      'Include two simple settings (e.g., notification thresholds)',
+      'Persist profile changes to the database'
+    ]
+  },
+  {
+    section: '🔔 Alerts / Notifications Dashboard',
+    items: [
+      'Display alert records with timestamp, title, and status',
+      'Seed database with sample alert data if needed'
+    ]
+  },
+  {
+    section: '📋 Entity CRUD List Page',
+    items: [
+      'CRUD for DiagnosticTest or MonitoredDestination',
+      'Include full stack: API endpoints + UI to manage records'
+    ]
+  }];
 
 export default function ChecklistApp() {
   const [checkedItems, setCheckedItems] = useState({});
